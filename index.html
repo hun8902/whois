@@ -1,0 +1,9 @@
+<?php
+include "lib/config/config.php";
+if (checkAccessMobile() == true) {  // mobile 접속일때
+    session_start();
+    $_SESSION['is_mobile'] = 'y';
+}
+?>
+
+<meta http-equiv="refresh" content="0; url=index.php?tpf=main/index" />

@@ -1,0 +1,112 @@
+<!-- 게시판 Area -->
+<div class="board-list-area">
+
+    <!-- 게시판 네비 -->
+    <div class="board-naving hidden">
+        <ul>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">갤러리</a></li>
+            <li><a href="#">자주하는 질문</a></li>
+        </ul>
+    </div>
+    <!-- // 게시판 네비 -->
+
+    <!-- 게시판 타이틀 -->
+    <div class="board-title-area">
+        <h2><?=$board_info['title']?></h2>
+    </div>
+    <!-- //게시판 타이틀 -->
+
+    <!-- 게시판 글쓰기 -->
+    <div class="board-view-area">
+        <table class="board-view">
+            <tbody>
+                <!-- 제목 -->
+                <tr class="board-view-subject">
+                    <td><?=$data['title']?></td>
+                </tr>
+                <!-- //제목 -->
+                <!-- 글쓴이 / 등록일  -->
+                <tr class="board-view-writer">
+                    <td>
+                        <span class="board-view-name">글쓴이 : <strong><?=$data['name']?></strong></span>
+                        <span class="board-view-writer-right"><span class="board-view-date">등록일 : <?=$data['reg_date']?></span>
+                        <span class="board-view-hit">조회 : <?=$data['hitting']?></span></span>
+                    </td>
+                </tr>
+                <!-- //글쓴이 / 등록일  -->
+                <!-- 링크  -->
+                <tr class="board-view-link hidden">
+                    <td>
+                        <a href="#" target="_blank">http://www.naver.com</a>
+                    </td>
+                </tr>
+                <!-- //링크  -->
+                <!-- 첨부파일  -->
+                <tr class="board-view-file">
+<?php
+if (!empty($data['files'])) {
+    foreach($data['files'] as $key => $val) {
+        echo '      <td>
+                        <span onclick="location.replace(\'?tpf=common/save_as&file_path='.$val['file_path'].'&file_name='.$val['file_name'].'\');" style="cursor:pointer;">'.$val['orig_name'].'</span> ('.$val['file_size'].'K)
+                    </td>';
+    }
+}
+?>
+                </tr>
+                <!-- //첨부파일  -->
+                <!-- 게시글 내용 -->
+                <tr class="board-view-cont">
+                    <td>
+                        <!-- 게시글 이미지 -->
+<?php
+if (!empty($data['files'])) {
+    foreach($data['files'] as $key => $val) {
+        if (checkImage($val['file_ext'])) echo '<p><img src="'.$val['url'].'" alt="'.$val['orig_name'].'" style="max-width:100%"></p>';
+    }
+}
+?>
+                        <!-- //게시글 이미지 -->
+                        <?=$data['content']?>
+                    </td>
+                </tr>
+                <!-- //게시글 내용 -->
+            </tbody>
+        </table>
+    </div>
+    <!-- //게시판 글쓰기 -->
+
+    <!--게시판보기 버튼 area-->
+    <div class="board-view-btn-area">
+<!--
+        <p class="board-view-btn-left">
+            <a href="#" class="board-view-btn-modify">답글</a>
+            <a href="#" class="board-view-btn-modify">수정</a>
+            <a href="#" class="board-view-btn-del">삭제</a>
+        </p>
+-->
+        <p class="board-view-btn-right">
+            <a href="?tpf=board/list&board_code=<?=$data['board_code']?>" class="board-view-btn-list">목록</a>
+            <!--<a href="#" class="board-view-btn-write">글쓰기</a>-->
+        </p>
+    </div>
+    <!--// 게시판보기 버튼 area-->
+
+    <!-- 이전글 다음글 -->
+    <div class="next-view">
+        <ul>
+<?php
+if (!empty($extend['prev']['title'])) {
+    echo '  <li class="next-view-list-prev"><strong>이전글</strong><a href="?tpf=board/view&board_code='.$data['board_code'].'&code='.$extend['prev']['code'].'">'.$extend['prev']['title'].'</a></li>';
+}
+?>
+<?php
+if (!empty($extend['next']['title'])) {
+    echo '  <li class="next-view-list-next"><strong>다음글</strong><a href="?tpf=board/view&board_code='.$data['board_code'].'&code='.$extend['next']['code'].'">'.$extend['next']['title'].'</a></li>';
+}
+?>
+        </ul>
+    </div>
+    <!-- //이전글 다음글 -->
+</div>
+<!-- //게시판 Area-->

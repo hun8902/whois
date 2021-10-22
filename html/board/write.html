@@ -1,0 +1,97 @@
+<!-- 게시판 Area -->
+<div class="board-list-area">
+
+    <!-- 게시판 네비 -->
+    <div class="board-naving hidden">
+        <ul>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">갤러리</a></li>
+            <li><a href="#">자주하는 질문</a></li>
+        </ul>
+    </div>
+    <!-- // 게시판 네비 -->
+
+    <!-- 게시판 타이틀 -->
+    <div class="board-title-area">
+        <h2>공지사항</h2>
+    </div>
+    <!-- //게시판 타이틀 -->
+
+    <!-- 게시판 total -->
+    <div class="board-total-area hidden">
+        <p>Total <strong>250</strong>건<span>1 페이지</span></p>
+    </div>
+    <!-- //게시판 total -->
+
+    <!-- 게시판 글쓰기 -->
+    <div class="board-write-area">
+        <form action="#">
+            <table class="board-write">
+                <tbody>
+                    <tr>
+                        <th scope="row"><label for="bw_subject">제목</label></th>
+                        <td><input type="text" id="bw_subject" name="bw_subject" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="bw_name">이름</label></th>
+                        <td><input type="text" id="bw_name" name="bw_name" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="bw_notice">공지사항</label></th>
+                        <td>
+                            <select name="bw_notice" id="bw_notice">
+                                <option value="no">아니요</option>
+                                <option value="yes">네</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="bw_category">카테고리</label></th>
+                        <td>
+                            <select name="bw_category" id="bw_category">
+                                <option value="0">선택</option>
+                                <option value="1">선택</option>
+                            </select>
+                        </td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="bw_conts">내용</label></th>
+                        <td>
+                            <textarea name="bw_conts" id="bw_conts" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="bw_sclect">비밀번호</label></th>
+                        <td>
+                            <input type="text" id="bw_sclect" name="bw_sclect" />
+                            <input type="checkbox" id="bw_sclect_check" name="bw_sclect_check" /><label for="bw_sclect_check">비밀글</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="bw_link1">링크 #1</label></th>
+                        <td><input type="text" id="bw_link1" name="bw_link" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="bw_link2">링크 #2</label></th>
+                        <td><input type="text" id="bw_link2" name="bw_link" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="">파일 #1</label></th>
+                        <td>
+                            <button id="" name="">파일추가</button><br />
+                            <input type="file" /><br />
+                            <input type="file" /><br />
+                            <input type="file" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="board-write-btn-area">
+                <a href="#" class="board-write-btn-cancel">취소</a><a href="#" class="board-write-btn-ok">작성완료</a>
+            </p>
+        </form>
+    </div>
+    <!-- //게시판 글쓰기 -->
+</div>
+<!-- //게시판 Area-->

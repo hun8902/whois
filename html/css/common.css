@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/* common */
+html,body,div,span,applet,object,iframe,h1,h2,h3, h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,dialog,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
+ margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; font: inherit; vertical-align: baseline;
+ }
+body {width:100%; background-color:#ffffff; font-size:12px; line-height:1; word-wrap:break-word; word-break:break-all; zoom:1;}
+article,aside,details,dialog,figcaption,figure,footer,header,hgroup,menu,nav,section{display: block;}
+ol,ul,li{list-style: none}
+blockquote,q{quotes: none}
+blockquote:before,blockquote:after,q:before,q:after{content: ''; content: none;}
+ 
+ins{background-color: #ff9; color: #000000; text-decoration: none;}
+del{text-decoration: line-through;}
+
+table{border-collapse: collapse; border-spacing: 0;}
+ 
+abbr[title], dfn[title]{border-bottom:1px dotted #000000; cursor: help}
+ 
+hr{display: block; height: 1px; border: 0; border-top: 1px solid #cccccc; margin: 1em 0; padding: 0;}
+ 
+input, select, button {vertical-align: middle;}
+button, input[type="submit"] {cursor: pointer;}
+input:focus, button:focus, select:focus, textarea:focus {outline: 0;}
+button::-moz-focus-inner {border: 0 none; padding: 0;}
+
+img{border:0 none;vertical-align:middle;}
+.hidden{position:absolute; left:-9999px; top:-9999px; width:0; height:0; font-size:0; line-height:0;}
+a{text-decoration:none; color:#555;}
+
+*{-webkit-text-size-adjust:none;}
